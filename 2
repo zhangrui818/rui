@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+int times(char s[],char substr[])
+{
+	int i=0,j,times=0;
+	while(s[i])
+	{
+		j=0;
+		while(substr[j])
+		{
+			if(substr[j]!=s[i+j])
+				break;
+			j++;
+		}
+		if(!substr[j])
+		{
+			times++;
+			i+=j-1;
+		}
+		i++;
+	}
+	return times;}
+int main()
+{
+
+	char s[100];
+	char substr[100];
+	printf("�������\n");
+	
+	gets(s);
+	printf("������Ҫ���ҵĴ�\n");
+	gets(substr);
+	
+	
+	printf("%d\n",times(s,substr));
+	return 0;
+}
